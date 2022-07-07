@@ -1,27 +1,5 @@
 <template>
-  <div>
-    <v-menu offset-y
-            :close-on-content-click="false"
-            style="max-width: unset !important;"
-            :content-class="contentClass"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <div
-                v-bind="attrs"
-                v-on="on"
-                class="listBox-multi-select-input"
-        >
-          <div v-if="loading">
-            <v-progress-circular
-                    :size="20"
-                    color="primary"
-                    indeterminate
-            ></v-progress-circular>
-          </div>
-          <div v-if="!loading" v-bind:class="{caret: true, active: attrs['aria-expanded'] === 'true'}"></div>
-          <div v-if="!loading" :class="{'dropdown-text': true, 'placeholder': !selected.length}">{{dropDownText}}</div>
-        </div>
-      </template>
+  <div class="listBox-multi-select-menu">
       <v-text-field
               label="Search"
               append-icon="fas fa-search"
